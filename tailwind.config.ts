@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,24 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// LoopCard custom colors
+				loop: {
+					primary: '#5D5FEF',
+					secondary: '#20E3B2',
+					dark: '#0D0E12',
+					glass: 'rgba(255,255,255,0.04)',
+					'text-primary': '#FFFFFF',
+					'text-secondary': '#B0B3B8',
+					glow: '#8B5CF6'
 				}
+			},
+			fontFamily: {
+				'space': ['Space Grotesk', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +93,49 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(93, 95, 239, 0.3)',
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(93, 95, 239, 0.6), 0 0 60px rgba(93, 95, 239, 0.3)',
+					}
+				},
+				'card-float': {
+					'0%, 100%': {
+						transform: 'translateY(0px) rotateY(0deg)',
+					},
+					'50%': {
+						transform: 'translateY(-10px) rotateY(5deg)',
+					}
+				},
+				'shine-sweep': {
+					'0%': {
+						transform: 'translateX(-100%)',
+					},
+					'100%': {
+						transform: 'translateX(200%)',
+					}
+				},
+				'slide-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(50px)',
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)',
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+				'card-float': 'card-float 6s ease-in-out infinite',
+				'shine-sweep': 'shine-sweep 2s ease-in-out infinite',
+				'slide-in-up': 'slide-in-up 0.6s ease-out',
 			}
 		}
 	},
